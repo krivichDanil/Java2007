@@ -1,44 +1,65 @@
+
 public class HomeWorkApp {
     public static void main(String[] args) {
-       printThreeWords();
-       checkSumSign();
-       printColor();
-       compareNumbers();
+        System.out.println(sum(10, 10));
+        System.out.println(isPositiveNumber(1));
+        System.out.println(isPositive(-1));
+        printString("Hello", 8);
+        System.out.println(isLeapYear(2021));
     }
-    public static void printThreeWords(){
-        System.out.println("Orange");
-        System.out.println("Banana");
-        System.out.println("Apple");
-    }
-    public static void checkSumSign(){
-        int a = -1;
-        int b = 2;
-        int c = a+b;
-        if(c>=0){
-            System.out.println("Сумма положительная");
-        }else {
-            System.out.println("Сумма отрицательная");
-        }
-    }
-    public static void printColor(){
-        int value = 0;
-       if(value<=0){
-           System.out.println("Красный");
-       }else if(value>0 && value<100){
-           System.out.println("Желтый");
-        }else if(value>100){
-           System.out.println("Зеленый");
-        }
 
+    /**
+     * 1
+     */
+    public static boolean sum(int a, int b) {
+        int c = a + b;
+        return c >= 10 && c <= 20;
     }
-    public static void compareNumbers(){
-        int a = 200;
-        int b = 200;
-        if (a>=b){
-            System.out.println("a>=b");
+
+    /**
+     * 2
+     */
+    public static String isPositiveNumber(int a) {
+        if (a < 0)
+            return "Число отрицательное";
+        else
+            return "Число положительное";
+    }
+
+    /**
+     * 3
+     */
+    public static Boolean isPositive(int a) {
+        return a > 0;
+    }
+
+    /**
+     * 4
+     */
+    public static void printString(String str, int amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Отрицательное значение");
         }
-        else {
-            System.out.println("a<b");
+        for (int i = 0; i < amount; i++) {
+            System.out.println(str);
         }
+    }
+
+
+    /**
+     * 5
+     */
+    public static Boolean isLeapYear(int year) {
+
+        int i = year % 400;
+        int j = year % 100;
+
+        if (i == 0) {
+            return true;
+        }
+        if (i % 4 == 0 && j != 0) {
+            return true;
+        } else return false;
     }
 }
+
