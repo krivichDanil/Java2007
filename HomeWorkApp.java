@@ -29,7 +29,6 @@ public class HomeWorkApp {
         }else if(value>100){
            System.out.println("Зеленый");
         }
-
     }
     public static void compareNumbers(){
         int a = 200;
